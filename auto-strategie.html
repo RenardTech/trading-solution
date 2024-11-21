@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <title>Automatiser sa strategie</title>
+</head>
+<body>
+    <nav id="nav-bar">
+        <a href="index.html" id="home">Accueil</a>
+
+        <!-- Bouton avec une icône -->
+        <button class="dropdown-btn" onclick="toggleDropdown()">
+            Nos Services  <i>&#9660;</i>
+        </button>
+
+        <!-- Contenu du menu déroulant -->
+        <div class="dropdown-content">
+            <a href="formations.html">Formation</a>
+            <a href="#">Automatisation de srategie</a>
+            
+        </div>
+    </nav>
+    <menu class="accueil-2">
+
+    </menu>
+    <section class="auto-s">   
+        <section class="intro">
+            <div class="container">
+                <h2>Pourquoi automatiser votre stratégie de trading ?</h2> <hr>
+                <p>L'automatisation de votre stratégie de trading peut vous aider à exploiter 
+                    les opportunités du marché de manière optimale. Que vous soyez un trader 
+                    débutant ou expérimenté, nous vous aidons à créer une solution sur mesure qui
+                     répond à vos objectifs et votre style de trading.
+                </p>
+            </div>
+            <button id="btn-presentation">
+                <a href="demande.html">Automatiser ma strategie</a>
+            </button>
+        </section>
+
+    
+       
+            <!-- Footer -->
+<footer>
+    <div class="liens">
+        <p>Visitez mon catalogue de services :</p>
+        <a href="https://wa.me/c/22898740835" target="_blank" title="Catalogue de services">
+            <i class="fab fa-whatsapp"></i> Catalogue de services
+        </a>
+
+        <p>Mon compte MQL5 :</p>
+        <a href="https://www.mql5.com/en/market/product/124360" target="_blank" title="MQL5">
+            <i class="fab fa-accusoft"></i> Compte MQL5
+        </a>
+
+        <p>Mes brokers de confiance :</p>
+        <a href="https://track.deriv.com/_uLzSi0hVVMY-kphAZc4sJmNd7ZgqdRLk/1/" target="_blank" title="DERIV">
+            <i class="fas fa-chart-line"></i> DERIV
+        </a>
+        <br>
+        <a href="https://one.exnesstrack.org/a/wia1wmsm34" target="_blank" title="EXNESS">
+            <i class="fas fa-chart-line"></i> EXNESS
+        </a>
+
+        <p>Ma chaîne YouTube :</p>
+        <a href="https://youtube.com/@bagoudjaretrading" target="_blank" title="Chaîne YouTube">
+            <i class="fab fa-youtube"></i> Chaîne YouTube
+        </a>
+
+        <p>Mon groupe Telegram :</p>
+        <a href="https://t.me/+wKNlPbDMuldmMmQ0" target="_blank" title="Groupe Telegram">
+            <i class="fab fa-telegram-plane"></i> Groupe Telegram
+        </a>
+    </div>
+    <div class="copy">
+        <p>&copy; 2024 BAGOUDJARE - TRADING </p>
+    </div>
+</footer>
+
+
+<script>
+        function toggleDropdown() {
+            const content = document.querySelector('.dropdown-content');
+            const icon = document.querySelector('.dropdown-btn i');
+           
+            // Alterne la visibilité du contenu
+            content.classList.toggle('open');
+           
+            // Alterne l'icône entre bas (▼) et haut (▲)
+            if (content.classList.contains('open')) {
+                icon.innerHTML = '&#9650;';  // Icône vers le haut
+            } else {
+                icon.innerHTML = '&#9660;';  // Icône vers le bas
+            }
+        }
+
+       // Initialisation de EmailJS avec votre User ID
+(function(){
+    emailjs.init("dSO_mA3dzvL-I82GW");  // Remplacez par votre User ID EmailJS
+})();
+
+// Fonction pour envoyer l'email
+function sendEmail(event) {
+    event.preventDefault();  // Empêche le rechargement de la page après soumission du formulaire
+
+    // Récupération des valeurs du formulaire
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var strategyType = document.getElementById("strategy-type").value;
+    var strategyDescription = document.getElementById("strategy-description").value;
+    var indicators = document.getElementById("indicators").value;
+    var budget = document.getElementById("budget").value;
+    var urgency = document.getElementById("urgency").value;
+
+    // Création de l'objet avec les données du formulaire
+    var templateParams = {
+        name: name,
+        email: email,
+        strategyType: strategyType,
+        strategyDescription: strategyDescription,
+        indicators: indicators,
+        budget: budget,
+        urgency: urgency
+    };
+
+    // Envoi de l'email via EmailJS
+    emailjs.send('service_rxeyr1k', 'template_5ux029h', templateParams)
+        .then(function(response) {
+            console.log('Email envoyé avec succès!', response);
+            alert("Votre demande a bien été envoyée !");
+        }, function(error) {
+            console.log('Erreur d\'envoi de l\'email', error);
+            alert("Une erreur est survenue, veuillez réessayer.");
+        });
+}
+
+    </script>
+</body>
+</html>

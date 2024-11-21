@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Inscription à une Formation</title>
+</head>
+<body>
+    <nav id="nav-bar">
+        <a href="index.html" id="home">Accueil</a>
+
+        <!-- Bouton avec une icône -->
+        <button class="dropdown-btn" onclick="toggleDropdown()">
+            Nos Services  <i>&#9660;</i>
+        </button>
+
+        <!-- Contenu du menu déroulant -->
+        <div class="dropdown-content">
+            <a href="#">Formation</a>
+            <a href="auto-strategie.html">Automatisation de srategie</a>
+            
+        </div>
+    </nav>
+    <section id="monetisation" style="font-family: Arial, Helvetica, sans-serif;">
+        <div class="mone-container">
+            <div class="benefits">
+                <div class="benefit">
+                    <p>Apprenez à programmer des outils puissants en MQL5 
+                        et mettez-les en vente sur le marché MQL5. Vous pouvez 
+                        générer des revenus passifs en vendant vos EA 
+                        (Expert Advisors), indicateurs, scripts et autres outils
+                         automatisés.
+                    </p>
+                </div>
+                <div class="benefit">
+                    <h3>Gagnez de l'argent en vendant vos outils</h3>
+                    <p>Le marché MQL5 est une plateforme internationale où vous pouvez vendre vos Expert Advisors, indicateurs et scripts. Vous définissez votre prix et gérez vos ventes à votre rythme.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Revenus passifs à vie</h3>
+                    <p>Une fois votre produit mis en ligne, il peut continuer à générer des ventes sans que vous ayez à intervenir. Un véritable revenu passif à long terme !</p>
+                </div>
+                <div class="benefit">
+                    
+                    <h3>Un marché mondial</h3>
+                    <p>Le marché MQL5 est visité par des traders du monde entier, offrant à vos produits une visibilité maximale et des opportunités de vente accrues.</p>
+                </div>
+            </div>
+            <div>
+                <img class="mql5" src="marche-mql.jpg" alt="marche mql5">
+            </div>
+            <div class="call-to-action">
+                <h3>Prêt à faire de votre passion une source de revenus ?</h3>
+                <p>Inscrivez-vous à notre formation en programmation MQL5 et apprenez à créer des outils qui vendent !</p>
+                <button class="btn-demande">
+                    <a href="inscription.html">Je m'inscris maintenant</a>
+                </button>
+            </div>
+    
+            <section id="temoignages">
+                <h3 style="color: aqua;">Voici mes propres preuves</h3>
+                <div class="temoignages-container">
+                    <div class="temoignage">
+                        <img src="preuve-2.jpg" alt="preuve" class="photo-client">
+                        <div class="temoignage-text">
+                            <p class="nom-client">Mes gains sur Mql5</p>
+                        </div>
+                    </div>
+                    <div class="temoignage">
+                        <img src="preuve-1.jpg" alt="preuve" class="photo-client">
+                        <div class="temoignage-text">
+                            <p class="nom-client">Un exemple d'achat de  mon produit sur Mql5</p>
+                    </div>
+            </section>
+            </div>
+    </section>
+            <!-- Footer -->
+<footer>
+    <div class="liens">
+        <p>Visitez mon catalogue de services :</p>
+        <a href="https://wa.me/c/22898740835" target="_blank" title="Catalogue de services">
+            <i class="fab fa-whatsapp"></i> Catalogue de services
+        </a>
+
+        <p>Mon compte MQL5 :</p>
+        <a href="https://www.mql5.com/en/market/product/124360" target="_blank" title="MQL5">
+            <i class="fab fa-accusoft"></i> Compte MQL5
+        </a>
+
+        <p>Mes brokers de confiance :</p>
+        <a href="https://track.deriv.com/_uLzSi0hVVMY-kphAZc4sJmNd7ZgqdRLk/1/" target="_blank" title="DERIV">
+            <i class="fas fa-chart-line"></i> DERIV
+        </a>
+        <br>
+        <a href="https://one.exnesstrack.org/a/wia1wmsm34" target="_blank" title="EXNESS">
+            <i class="fas fa-chart-line"></i> EXNESS
+        </a>
+
+        <p>Ma chaîne YouTube :</p>
+        <a href="https://youtube.com/@bagoudjaretrading" target="_blank" title="Chaîne YouTube">
+            <i class="fab fa-youtube"></i> Chaîne YouTube
+        </a>
+
+        <p>Mon groupe Telegram :</p>
+        <a href="https://t.me/+wKNlPbDMuldmMmQ0" target="_blank" title="Groupe Telegram">
+            <i class="fab fa-telegram-plane"></i> Groupe Telegram
+        </a>
+    </div>
+    <div class="copy">
+        <p>&copy; 2024 BAGOUDJARE - TRADING </p>
+    </div>
+</footer>
+    
+
+    <script>
+        function toggleDropdown() {
+            const content = document.querySelector('.dropdown-content');
+            const icon = document.querySelector('.dropdown-btn i');
+           
+            // Alterne la visibilité du contenu
+            content.classList.toggle('open');
+           
+            // Alterne l'icône entre bas (▼) et haut (▲)
+            if (content.classList.contains('open')) {
+                icon.innerHTML = '&#9650;';  // Icône vers le haut
+            } else {
+                icon.innerHTML = '&#9660;';  // Icône vers le bas
+            }
+        }
+        // Fonction pour gérer le défilement des images dans un slider
+        function moveSlide(step) {
+    const sliders = document.querySelectorAll('.slider');
+   
+    // Pour chaque slider (chaque article)
+    sliders.forEach(slider => {
+        const images = slider.querySelectorAll('.slider-image');
+        let currentIndex = Array.from(images).findIndex(img => img.style.display === 'block');
+       
+        // Si aucune image n'est affichée, on commence par la première
+        if (currentIndex === -1) {
+            currentIndex = 0;
+            images[currentIndex].style.display = 'block';
+        }
+       
+        // Cache l'image actuellement affichée
+        images[currentIndex].style.display = 'none';
+       
+        // Calcul du prochain index
+        let nextIndex = currentIndex + step;
+       
+        // Si l'index dépasse le nombre d'images, on revient au début
+        if (nextIndex < 0) {
+            nextIndex = images.length - 1;
+        } else if (nextIndex >= images.length) {
+            nextIndex = 0;
+        }
+       
+        // Affiche la prochaine image
+        images[nextIndex].style.display = 'block';
+    });
+}
+
+// Fonction d'initialisation des sliders (au chargement de la page)
+function initializeSliders() {
+    const sliders = document.querySelectorAll('.slider');
+   
+    sliders.forEach(slider => {
+        const images = slider.querySelectorAll('.slider-image');
+       
+        // Masque toutes les images sauf la première
+        images.forEach((image, index) => {
+            if (index !== 0) {
+                image.style.display = 'none';
+            }
+        });
+    });
+}
+
+// Appel de la fonction pour initialiser les sliders à l'ouverture de la page
+initializeSliders();
+
+        // Exemple de carrousel simple pour afficher un témoignage après l'autre
+        let index = 0;
+    const temoignages = document.querySelectorAll('.temoignage');
+   
+    function afficherTemoignage() {
+        temoignages.forEach((temoignage, i) => {
+            temoignage.style.display = (i === index) ? 'block' : 'none';
+        });
+        index = (index + 1) % temoignages.length;
+    }
+
+    setInterval(afficherTemoignage, 5000); // Change de témoignage toutes les 5 secondes
+    afficherTemoignage(); // Affiche le premier témoignage dès le départ
+    </script>
+</body>
+</html>

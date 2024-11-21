@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <title>Inscription</title>
+</head>
+<body>
+    <nav id="nav-bar">
+        <a href="index.html" id="home">Accueil</a>
+
+        <!-- Bouton avec une icône -->
+        <button class="dropdown-btn" onclick="toggleDropdown()">
+            Nos Services  <i>&#9660;</i>
+        </button>
+
+        <!-- Contenu du menu déroulant -->
+        <div class="dropdown-content">
+            <a href="formations.html">Formation</a>
+            <a href="auto-strategie.html">Automatisation de srategie</a>
+            
+        </div>
+    </nav>
+    <section style="margin-top: 20%;">
+        <div class="container-form">
+            <h1>Inscription</h1>
+            <form id="formulaire-inscription" onsubmit="sendEmail(event)">
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="telephone">Téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="formation">Formation choisie :</label>
+                    <select id="formation" name="formation" required>
+                        <option value="formation_1">Formation 1 -Programmation MQL5</option>
+                        <option value="formation_2">Formation 2 - Trading</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="commentaires">Commentaires :</label>
+                    <textarea id="commentaires" name="commentaires"></textarea>
+                </div>
+    
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    
+     </section>
+
+     <script>
+        function toggleDropdown() {
+            const content = document.querySelector('.dropdown-content');
+            const icon = document.querySelector('.dropdown-btn i');
+           
+            // Alterne la visibilité du contenu
+            content.classList.toggle('open');
+           
+            // Alterne l'icône entre bas (▼) et haut (▲)
+            if (content.classList.contains('open')) {
+                icon.innerHTML = '&#9650;';  // Icône vers le haut
+            } else {
+                icon.innerHTML = '&#9660;';  // Icône vers le bas
+            }
+        }
+    </script>
+
+    <script>
+    // Initialisation d'EmailJS avec votre USER ID
+    emailjs.init('dSO_mA3dzvL-I82GW');
+
+    // Fonction pour envoyer l'email lors de la soumission du formulaire
+    function sendEmail(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du formulaire
+
+    // Récupération des données du formulaire
+    const formData = new FormData(document.getElementById('formulaire-inscription'));
+   
+    // Construction d'un objet avec les données du formulaire
+    const data = {
+        prenom: formData.get('prenom'),
+        nom: formData.get('nom'),
+        email: formData.get('email'),
+        telephone: formData.get('telephone'),
+        formation: formData.get('formation'),
+        commentaires: formData.get('commentaires')
+    };
+
+    // Envoi des données via EmailJS
+    emailjs.send('service_rxeyr1k', 'template_5ux029h', data)
+        .then(function(response) {
+            console.log('Email envoyé avec succès', response);
+            alert('Votre inscription a bien été envoyée !');
+        })
+        .catch(function(error) {
+            console.log('Erreur lors de l\'envoi de l\'email', error);
+            alert('Une erreur est survenue. Veuillez réessayer plus tard.');
+        });
+}
+
+    </script>
+
+
+</body>
+</html>

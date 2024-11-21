@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <nav id="nav-bar">
+        <a href="#" id="home" style="background-color: #75a6d137; color: white;">Accueil</a>
+
+        <!-- Bouton avec une icône -->
+        <button class="dropdown-btn" onclick="toggleDropdown()">
+             Nos Services <i>&#9660;</i>
+        </button>
+
+        <!-- Contenu du menu déroulant -->
+        <div class="dropdown-content">
+            <a href="formations.html">Formation</a>
+            <a href="auto-strategie.html">Automatisation de srategie</a>
+            
+        </div>
+    </nav>
+    <menu class="accueil">
+
+    </menu>
+    <section class="presentation">
+        <h1>Trading Solution Fiable</h1>
+            <figure>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/7r7r9Zt8rXM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <figcaption>Présentation De La Solution</figcaption>
+              </figure> 
+        <div class="description">
+            <h3 style="text-align: left; padding: 5px; text-decoration: underline">Description</h3>
+            <p>
+                Le système a été créé en se basant de mes 4 ans d'expérience et des
+                divers méthodologies que j'ai eu à étudier. C'est un système qui a 
+                plusieurs composantes.
+            </p>
+            <p>
+               Avec ce système, vous avez l'avantage d'économiser votre argent
+               (pas besoin de gacher votre argent pour des formations...)
+            </p>
+            <p>
+                Ce système fait 99% du travail: il auto-analyse le marché à votre
+                place et vous envoie des opportunités et vous montre les points 
+                de sortie.
+            </p>
+        </div>
+        <button id="btn-presentation">
+            <a href="autres-outils.html">Decouvrir les divers composants du système</a>
+        </button>
+    </section>
+   
+
+    <!-- Footer -->
+<footer>
+    <div class="liens">
+        <p>Visitez mon catalogue de services :</p>
+        <a href="https://wa.me/c/22898740835" target="_blank" title="Catalogue de services">
+            <i class="fab fa-whatsapp"></i> Catalogue de services
+        </a>
+
+        <p>Mon compte MQL5 :</p>
+        <a href="https://www.mql5.com/en/market/product/124360" target="_blank" title="MQL5">
+            <i class="fab fa-accusoft"></i> Compte MQL5
+        </a>
+
+        <p>Mes brokers de confiance :</p>
+        <a href="https://track.deriv.com/_uLzSi0hVVMY-kphAZc4sJmNd7ZgqdRLk/1/" target="_blank" title="DERIV">
+            <i class="fas fa-chart-line"></i> DERIV
+        </a>
+        <br>
+        <a href="https://one.exnesstrack.org/a/wia1wmsm34" target="_blank" title="EXNESS">
+            <i class="fas fa-chart-line"></i> EXNESS
+        </a>
+
+        <p>Ma chaîne YouTube :</p>
+        <a href="https://youtube.com/@bagoudjaretrading" target="_blank" title="Chaîne YouTube">
+            <i class="fab fa-youtube"></i> Chaîne YouTube
+        </a>
+
+        <p>Mon groupe Telegram :</p>
+        <a href="https://t.me/+wKNlPbDMuldmMmQ0" target="_blank" title="Groupe Telegram">
+            <i class="fab fa-telegram-plane"></i> Groupe Telegram
+        </a>
+    </div>
+    <div class="copy">
+        <p>&copy; 2024 BAGOUDJARE - TRADING </p>
+    </div>
+</footer>
+  
+
+    <script>
+        function toggleDropdown() {
+            const content = document.querySelector('.dropdown-content');
+            const icon = document.querySelector('.dropdown-btn i');
+           
+            // Alterne la visibilité du contenu
+            content.classList.toggle('open');
+           
+            // Alterne l'icône entre bas (▼) et haut (▲)
+            if (content.classList.contains('open')) {
+                icon.innerHTML = '&#9650;';  // Icône vers le haut
+            } else {
+                icon.innerHTML = '&#9660;';  // Icône vers le bas
+            }
+        }
+    </script>
+</body>
+</html>
